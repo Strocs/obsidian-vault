@@ -2,12 +2,21 @@
 id: 1727963010-festival-frijol-magico
 aliases:
   - Festival Frijol Magico
-tags: []
+tags:
+  - projects
+  - work
+  - typescript
+  - astro
+  - react
+  - tailwind
+  - vercel
 ---
 
 # Festival Frijol Magico
 
 Frijol Mágico es un espacio que reúne a las y los Ilustradores de la Región de Coquimbo, generando distintas instancias que ayuden a potenciar su trabajo.
+
+> 
 
 ## Descripción
 
@@ -25,3 +34,38 @@ La primera versión fue realizada
 - AstroJs
 - TailwindCSS
 - ReactJs
+
+
+
+
+# Festival Frijol Magico
+
+**description**
+
+> site description
+
+## Links
+
+- [Sitio web](https://)
+- [Respositorio](https://github.com/strocs/)
+
+## Tecnologías
+
+- **Lenguajes:** TypeScript
+- **Frameworks:** Astro
+- **Testing:** 
+- **Bundler:**
+- **Hosting:**
+
+## Estado del proyecto
+
+## Proceso de desarrollo
+
+### Diseño
+
+### Desarrollo
+
+### Aprendizajes
+
+## Galería
+

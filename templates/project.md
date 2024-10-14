@@ -1,18 +1,4 @@
----
-id: 1727878089-datos-fondos-de-cultura
-aliases:
-  - Datos Fondos de Cultura
-tags:
-  - projects
-  - personal
-  - typescript
-  - nextjs
-  - tailwind
-  - vercel
-  - python
----
-
-# Datos Fondos de Cultura
+# {{title}}
 
 **description**
 

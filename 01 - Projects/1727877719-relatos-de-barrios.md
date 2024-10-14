@@ -3,6 +3,7 @@ id: 1727877719-relatos-de-barrios
 aliases:
   - Relatos de Barrios
 tags:
+  - projects
   - work
   - react
   - css

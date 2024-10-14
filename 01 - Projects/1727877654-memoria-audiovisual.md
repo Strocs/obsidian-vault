@@ -3,12 +3,12 @@ id: 1727877654-memoria-audiovisual
 aliases:
   - Memoria Audiovisual
 tags:
+  - projects
   - work
-  - javascript
   - typescript
   - astro
   - tailwind
-  - playwright
+  - vercel
 ---
 
 # Memoria Audiovisual

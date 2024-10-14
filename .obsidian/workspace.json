@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "void/1728264979-todo.md",
+                "file": "void/1727975654-lab-2---google-cloud-fundamentals-core-infrastructure.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:work",
+                "query": "tag:typescript",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "void/1728264979-todo.md",
+                "file": "void/1727975654-lab-2---google-cloud-fundamentals-core-infrastructure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "void/1728264979-todo.md",
+                "file": "void/1727975654-lab-2---google-cloud-fundamentals-core-infrastructure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "void/1728264979-todo.md"
+                "file": "void/1727975654-lab-2---google-cloud-fundamentals-core-infrastructure.md"
               }
             }
           }
@@ -148,11 +148,24 @@
   },
   "active": "a33c6a2237a3760e",
   "lastOpenFiles": [
+    "void/1727975610-lab-1---implement-load-balancing-on-compute-engine.md",
+    "void/1727975469-week-1.md",
+    "void/1727975536-week-2.md",
+    "void/1725649787-react.md",
+    "01 - Projects/1727877635-mupa.md",
     "01 - Projects/1727877622-loungefi.md",
-    "void/1728264979-todo.md~",
-    "void/4913",
-    "void/1728264979-todo.md",
     "01 - Projects/1727803481-projects.md",
+    "void/1727975654-lab-2---google-cloud-fundamentals-core-infrastructure.md",
+    "void/1727975536-week-2.md~",
+    "void/4913",
+    "void/1727975654-lab-2---google-cloud-fundamentals-core-infrastructure.md~",
+    "files/gc-hierarchy.png",
+    "void/2024-10-10.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "01 - Projects/1727877924-festival-arc-2024.md",
+    "void/1728264979-todo.md~",
+    "void/1728264979-todo.md",
     "01 - Projects/1727877654-memoria-audiovisual.md",
     "01 - Projects/1727877622-loungefi.md~",
     "01 - Projects/4913",
@@ -161,13 +174,10 @@
     "01 - Projects/1727877719-relatos-de-barrios.md~",
     "01 - Projects/1727877934-festival-arc-2023.md",
     "01 - Projects/1727877719-relatos-de-barrios.md",
-    "void/1725649787-react.md",
     "01 - Projects/1727803481-projects.md~",
     "files/relatos-de-barrios/relatos-01.png",
     "files/relatos-de-barrios/relatos-03.png",
     "files/relatos-de-barrios/relatos-02.png",
-    "files/relatos-de-barrios",
-    "void/1726144147-associate-cloud-engineer-gcp.md~",
     "void/1727656368-selection-sort.md",
     "void/FrijolMágico.md",
     "void/1725323172-testing.md"
