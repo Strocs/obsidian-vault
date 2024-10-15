@@ -24,7 +24,7 @@ tags:
 
 ## Tecnologías
 
-- **Lenguajes:** JavaScript, TypeScript
+- **Lenguajes:** TypeScript
 - **Frameworks:** Astro, TailwindCSS
 - **Bundler:** Vite
 - **Hosting:** Vercel
