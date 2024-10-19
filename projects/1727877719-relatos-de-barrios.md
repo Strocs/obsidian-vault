@@ -24,7 +24,7 @@ tags:
 
 - **Lenguajes:** JavaScript, CSS
 - **Frameworks:** React, React Spring
-- **Bundler:** Vite
+- **Otros:** Vite
 
 ## Estado del proyecto
 
@@ -32,29 +32,26 @@ Finalizado en 2022.
 
 ## Proceso de desarrollo
 
-Fui contactado para crear una página web destinada a difundir el libro, documental y material gráfico recolectado por los realizadores del proyecto **Relatos de Barrio**. El principal desafío consistía en integrar estos elementos de manera coherente en una plataforma interactiva, atractiva y accesible.
+Fui contactado para crear una página web interactiva que presentara el libro, documental y material gráfico del proyecto **Relatos de Barrios**. El principal reto fue integrar estos elementos de manera cohesiva y accesible en una plataforma que reflejara la identidad visual y patrimonial del barrio Rengifo.
 
 ### Diseño
 
-Basándome en la identidad gráfica diseñada para el proyecto, creé la estructura visual del sitio, asegurando que los colores, tipografías y elementos gráficos mantuvieran coherencia con el resto de los productos del proyecto (libro y documental). Destacaron los stickers interactivos que aluden a la identidad del barrio y contribuyeron a darle un toque único al diseño reflejando la esencia del barrio Rengifo.
+Tomé como base la identidad gráfica del proyecto, asegurando la coherencia en colores, tipografía y elementos visuales. Uno de los aspectos distintivos del diseño fue la inclusión de stickers interactivos que reflejan la esencia del barrio, aportando un toque único y personal a la experiencia del usuario.
 
 ### Desarrollo
 
-Este fue mi primer proyecto utilizando React. Durante su desarrollo, estaba cursando un [curso de React en Udemy](https://www.udemy.com/course/react-cero-experto/), y me desafié a implementar lo aprendido directamente en este proyecto.
+Este fue mi primer proyecto utilizando **React**, lo cual me permitió aplicar de manera práctica lo que estaba aprendiendo en este [curso de React en Udemy](https://www.udemy.com/course/react-cero-experto/). Los desafíos técnicos incluyeron:
 
-Las funcionalidades clave que implementé incluyeron:
+- **Manejo de estado**: Utilicé useState para controlar la interactividad del sitio y gestionar el flujo de datos entre componentes.
+- **Efectos y animaciones**: Con useEffect, controlé las animaciones y eventos del DOM. Integré React Spring para animaciones suaves, mejorando la experiencia del usuario.
+- **Renderizado condicional**: Implementé la lógica para mostrar o esconder contenido según las acciones del usuario, asegurando una navegación fluida y personalizada.
+- **Optimización responsiva**: Me aseguré de que el sitio fuera completamente adaptable a dispositivos móviles, tabletas y escritorios, garantizando una experiencia consistente.
 
-- Manejo de estado con useState para gestionar la interactividad del sitio.
-- Manejo de efectos con useEffect para controlar animaciones y eventos en el DOM.
-- Renderizado condicional para mostrar contenido en función de la interacción del usuario.
-- Estructuración básica de un proyecto de React, desde el punto de entrada hasta los componentes y estilos.
-- Para mejorar la experiencia visual, utilicé React Spring para implementar animaciones suaves que aportaron dinamismo a la interfaz. Asimismo, integré librerías adicionales para asegurar que el sitio fuera completamente responsivo, proporcionando una experiencia fluida en dispositivos móviles y de escritorio.
+Un desafío particular fue el **SEO**, ya que al enfocarme en **Client-Side Rendering (CSR)**, el sitio inicialmente no estaba optimizado para motores de búsqueda. Esto me llevó a investigar y entender las diferencias entre **CSR** y **Server-Side Rendering (SSR)**, lo que me permitió ajustar el enfoque para mejorar la visibilidad del sitio en buscadores.
 
-### Aprendizajes y mejoras
+### Aprendizajes
 
-Este proyecto fue fundamental para profundizar en las diferencias entre client-side rendering (CSR) y server-side rendering (SSR). Inicialmente, el sitio experimentó problemas de SEO debido a mi enfoque en CSR, lo que me llevó a investigar y aprender sobre los distintos tipos de renderizado y sus efectos en la optimización de motores de búsqueda.
-
-Gracias a esta experiencia, obtuve un entendimiento más sólido sobre cómo optimizar sitios web para SEO y cómo elegir la estrategia de renderizado más adecuada para cada tipo de proyecto.
+Este proyecto no solo me permitió profundizar en **React** y animaciones con **React Spring**, sino también en cómo estructurar correctamente un proyecto y elegir estrategias de renderizado según las necesidades de SEO. Esta experiencia reforzó mi capacidad para tomar decisiones técnicas que impacten directamente en el rendimiento y la visibilidad de un sitio web.
 
 ## Galería
 
