@@ -8,25 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a33c6a2237a3760e",
+            "id": "9bca25e21f475152",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
-            "id": "639cf8d433efaae5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.7.4"
+                "file": "projects/1727877622-loungefi.md",
+                "mode": "source",
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Release Notes 1.7.4"
+              "title": "1727877622-loungefi"
             }
           }
         ]
@@ -81,8 +73,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -171,8 +162,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a33c6a2237a3760e",
+  "active": "9bca25e21f475152",
   "lastOpenFiles": [
+    "projects/1727877622-loungefi.md",
+    "projects/1727803481-projects.md",
     "void/1728430768-express.md",
     "void/1725649787-react.md",
     "void/1729867556-react-tools.md~",
@@ -195,7 +188,6 @@
     "files/loungefi/_LoungeFi-DT03.png",
     "files/loungefi/_LoungeFi-M01.png",
     "files/loungefi/_LoungeFi-DT01.png",
-    "projects/1727877622-loungefi.md",
     "files/loungefi/_LoungeFi.md",
     "projects/1727877719-relatos-de-barrios.md",
     "files 1.md",
@@ -217,7 +209,6 @@
     "void/1728264979-todo.md",
     "01 - Projects/1727877654-memoria-audiovisual.md",
     "01 - Projects/1727877934-festival-arc-2023.md",
-    "01 - Projects/1727877719-relatos-de-barrios.md",
     "files/relatos-de-barrios/relatos-01.png",
     "files/relatos-de-barrios/relatos-03.png",
     "files/relatos-de-barrios/relatos-02.png"
