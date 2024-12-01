@@ -104,4 +104,21 @@ Ejemplos:
 
 #### Facturación
 
-Finanzas y operaciones son administradas de manera separada.
+- Finanzas y operaciones son administradas de manera separada.
+- Una cuenta de facturación puede ser asignada a múltiples proyectos y recursos específicos
+   - Pero un proyecto o recurso sólo puede estar fijo a una sola cuenta de facturación
+- Una cuenta de facturación pertenece a la organización y no a alguno de los sub-recursos
+- A nivel de organización podemos tener múltiples cuentas de facturación, separadas como mejor lo necesite la empresa o entidad
+
+##### Budget Alert
+
+Podemos asignar alertas relacionadas a las finanzas utilizando la herramienta de Google Monitoring
+
+
+### Configurando CLI, Shell, SDK and console
+
+Tanto Shell como SDK vienen preinstalados y son las únicas maneras de interactuar con GCP desde la línea de comandos
+Console es es el apartado visual
+Existen plataformas como Mobile y la API-Rest que no viene instalado por defecto en Shell
+
+## Sección 2:
