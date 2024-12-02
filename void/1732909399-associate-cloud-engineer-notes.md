@@ -254,7 +254,7 @@ Capa 7 HTTP(S), SMTP, DHCP (principalmente), también tiene un firewall de capa 
 > [!IMPORTANT]
 > Importante saber: Global vs Regional y Cuáles son de capa 4 (TCP/UDP, SSL Proxy) y cuáles de capa 7 (HTTP(S))
 
-## Productos
+### Productos
 
 - Spanner: es una base de datos relacional que utiliza redes globales, es la más básica base de datos
 - Cloud SQL: base de datos en la nube para mySQL, PostgreSQL y SQL Server
@@ -271,10 +271,135 @@ Capa 7 HTTP(S), SMTP, DHCP (principalmente), también tiene un firewall de capa 
 - GKE: permite ejecutar aplicaciones en contenedores, ofrece administración total, útil para casos de usos con arquitecturas complejas
 - Cloud Run Functions (o Cloud Functions): procesamiento controlado por eventos para servicios o apps en la nube, por ejemplo interceptar con apis y generar procesos en entornos serverless
 
+## Sección 3: Desplegar e implementar soluciones
+
+### Compute Engine
+- Inicializar una instancia de VM con Consola y Shell, asignar discos, políticas, llaves [[1729601391-ssh|SSH]]
+- Crear grupos administrados de instancias auto escalables usando plantillas de instancias 
+- Generar y subir llaves SSH personalizadas para las instancias
+- Instalar y configurar Cloud Monitoring y Agentes de Logs
+- Evaluar cuotas de cómputo y incrementar las necesidades
+
+> [!NOTE]
+> Para configuraciones de MySQL customizadas, no es posible usar Cloud SQL porque no permite la personalización de funcionalidades, en este caso se recomienda crear una VMs y configurarla par MySQL, se recomienda el uso de un tipo de máquina N2 por sobre las E2
+
+#### Tipos de Máquinas
+Standard, Alta memoria, alto cpu, memoria optimizada, compute optimizado, cores compartidos, custom
+
+> Los discos persistentes existen fuera de las máquinas virtuales y se comunican a través de la red
+
+Tipos de actualización de grupos de instancia administradas
+  - Oportunista: actualiza cuando la máquina naturalmente se reinicia, no es recomendado para asegurar la actualización de alguna característica importante
+  - Proactiva: actualiza las máquinas automáticamente progresivamente una por una, asegura que la actualización se realiza en el menor tiempo, es más barata
+
+> max surge refiere a la cantidad de máquinas extras para una actividad específica en las máquinas virtuales 
+
+#### Grupos de instancias administradas
+- Asegura que todas las instancias estén corriendo
+- Buena práctica para manejar instancias de VMs
+- Generalmente auto escala
+- Puede cambiar de tamaño de instancias
+- Puede ser Zonal (más barata pero prospecta a fallos críticos) o Regional
+
+### Kubernetes Engine
+Es la recomendación de Google para desplegar aplicaciones
+Clusters con AutoPilots no permite realizar cambios de bajo nivel al cluster ya que las configuraciones corren de manera automática
+> Investigar las características de los standard clusters
+
+Existe una imagen altamente optimizada que no permite modificaciones pero que permite una gran rendimiento de de nuestros contenedores 
+
+### Cloud Run y Cloud Functions
+- Desplegar aplicaciones y actualizar escalamientos, versiones y división de tráfico
+- App que recibe eventos de GC, por ejemplo pub/sub, cambios en objetos de almacenamiento, request http, etc
+
+> App Engine está detrás de Run y functions, no suele ser la mejor opción
+
+#### Run
+
+- App Contenerizada
+- Serverless
+- Expone un endpoint para comunicarse con la app
+  - Regional y replicada por las zonas
+- Escala basado en los Requests
+
+#### Functions
+> google.storage.object.finalize/deleted/archived/metadataUpdated son los únicos eventos para escuchar cambios en el storage 
+[!TODO] Estudiar Eventos 
+
+- Ejecución de funciones serverless
+- Basados en eventos
+- Se lanzan cuando ocurre un evento al que escuchan
+- Escala con el número de eventos
+- No tienen estados (sí internos, no externos)
+
+### Datos
+- Productos como Cloud SQL, Firestore, BigQuery, Spanner, Pub/Sub, Bigtabe, Dataproc, Dataflow, Cloud Storage
+- Cargar datos, por ejemplo subir datos mediante CLI, transferencia por API, cargar datos desde Storage o stremear datos a Pub/Sub
+
+#### Storage
+Al crear un bucket con CLI `gcloud storage buckets create` y no especificamos un `--location` por default es US Multi-Region
+
+> [!IMPORTANT]
+> Storage NO es para datos estructurada
+
+#### Cloud SQL
+- Para casos de fallos
+  - `--availability-type` sirve para especificar el alcance de del failover
+  - `--seconday-zone` especifica qué zona es a la que iremos en caso de fallos
+
+- Configurando instancias de Cloud SQL
+  1. Crear la instancias
+  2. Seleccionar el tipo de base de dato
+  3. Elegir un nombre
+  4. Elegr unnnnna contraseña para el usuario root
+  5. Elegir una versión correcta
+  6. Elegir Region y zona
+  7. Elegir zona primarya y secundaria
+  8. Configuraciones
 
 
+#### BigQuery
+  - Podemos cargar datos a BigQuery desde archivos (Json, CSV, etc), Dataflow, y BigQuery Data transfer que es un SaaS de Google auto administrado para manejar cargas de datos desde otras fuentes, suele ser la mejor solución y más fácil de implementar
+
+### Redes
+- Crear [Virtual Private Cloud](void/1729731486-virtual-private-cloud.md) con subnets
+  - custom-mode vpc, shared vpc
+- Lanzar Vms con configuraciones de redes personalizadas
+  - internal-only IP address, Google private access, static external and private ip address, network tags
+- Crear reglas de firewall para ingresos y egresos de trafico para una VPC 
+  - IP subnets, network tags, service account
+- Crear balanceadores de carga para distribuir tráfico a una aplicación
+  - global https load balancer, global SSL proxy load balancer, global TCP proxy load balancer, regional network load balancer, regional internal load balancer
+
+#### Existen dos tipos de VPC en Google
+  - Auto mode network (por defecto)
+    - un subnet por región
+    - se crea automáticamente
+    - nuevos subnets son agregados cuando nuevas regiones se conectan 
+    - ip addresses se originan de espacios predeterminados
+  - Custom mode network
+    - Permite más control de los subnets 
+    - Más flexible
+    - Control total de los subnets y regiones
+    - Recomendado para producción
 
 
+### Cloud Marketplace
 
+Por qué?
+  - Solución o específica solución que pueda estar creada y podemos utilizar
 
+### Infraestructura como código
+
+- Terraform
+  - init - plan - apply
+  - install dependencies - verify syntax and preview - apply configuration
+
+## Sección 4: Asegurar el éxito de las operaciones de una solución en la nube 
+
+### 4.2 GKE
+`apply` es la manera declarativa de 
+
+`neg` referencia en el objeto de configuración del servicio para internal https load balancers
+`si en ingress.class en gce` permite crear load balancers http externos
 
