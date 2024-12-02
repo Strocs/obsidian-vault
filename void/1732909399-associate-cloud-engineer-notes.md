@@ -122,3 +122,159 @@ Console es es el apartado visual
 Existen plataformas como Mobile y la API-Rest que no viene instalado por defecto en Shell
 
 ## Sección 2:
+
+> [!IMPORTANT] Egress Charges se refiere a los gastos asociados a recursos que van desde nuestros buckets hacia afuera, mientras que Ingress Charges se refiere a los gastos asociados a recursos que entran a nuestros buckets
+
+### Eligiendo y configurando infraestructura y servicios de despliegue 
+
+#### Infraestructura como servicio (IaaS)
+  - Google Compute Engine (GCE)
+    - Control total
+    - Permite controlar el sistema operativo
+    - Casos de uso:
+      - Cualquier flujo que requiera un sistema operativo específico
+      - 
+  - Google Kubernetes Engine (GKE)
+    - No depende de un sistema operativo
+    - Incrementa la velocidad y operativilidad dado que automatiza la escalabilidad
+    - Manejar contenedores en producción
+    - Casos de Uso:
+      - Flujos de contenedores
+      - Sistemas distribuidos basados en la nube
+      - Aplicaciones híbridas
+
+#### Plataforma como servicio (PaaS)
+  - Google App Engine
+    - Plataforma para construir aplicaciones basadas en el código
+    - Velocidad de desarrollo
+    - Minimiza los gastos operacionales
+    - Casos de Uso:
+      - Sitios web
+      - Aplicaciones
+      - Backend para videojuegos (u otros)
+      - IoT apps
+  - Google Cloud Run 
+    - Despliega código o contenedores que escuchan request o eventos
+    - Escala en conjunto a la demanda
+    - Se paga por el uso ( puede llegar a ser más barato para proyectos pequeños )
+    - Soporta API endpoints para comunicarse con la app
+    - Casos de Uso:
+      - Web Frameworks
+      - Microservicios
+  - Google Run Functions
+    - funciones que corren sobre Google Run
+    - Entorno serverless para ejecutar o conectar servicios cloud
+    - flujos basados en eventos
+    - Escala con la demanda
+    - Mínima configuración
+    - Casos de Uso:
+      - Análisis estadístico
+      - Generación de imágenes pequeñas
+      - Automatizaciones específicas
+
+### Eligiendo y configurando opciones de almacenamiento de datos
+
+  - Relacionales:
+    - Cloud SQL:
+      - Web frameworks as CMS, eCommerce
+    - Spanner:
+      - RDBMS+scale, HA, HTAP (revisar)
+      - Metadatos de usuarios
+  - No relacionales
+    - Firestore
+      - Jerárquico, web, apps
+      - Perfiles de usuario, Estados de juegos
+    - Bigtable
+      - Lecturas pesadas y escrituras, eventos
+      - FinTech, IoT
+  - Objetos:
+    - Cloud Storage
+      - Guardar binarios o objetos
+      - Imágenes, backups, etc
+  - Almacén de datos
+    - BigQuery
+      - almacén de datos a nivel empresarial
+      - Analíticas, dashboards.
+
+
+##### Clases de Cloud Storage
+
+Standard -> Nearline -> Coldline -> Archive
+Para mayor cantidad de lectura permitida, menor es el costo de lectura pero mayor el costo de GB almacenado, esto significa que en archive el costo por lectura es muy alto, pero por GB de almacenamiento es muy bajo a diferencia de standard que es al revés.
+
+## Planificación y Configuración de recursos de red
+
+> [!IMPORTANT]
+> Estudiar Redes a profundidad, entender diferentes protocolos, TCP/UDP, load balancers, proxies, etc
+
+##### Resultados del estudio:
+- TCP y UDP son protocolos de comunicación que corresponden a la capa 4 del modelo OSI, correspondiente a la capa de transporte
+  - TCP corresponde al protocolo de transferencia estable y se asgura de que los datos se envíen y lleguen al destinatario de la manera correcta
+  - UDP es un protocolo que no presta atención a la integridad de los datos, si no que comprende una comunicación más directa y veloz, es útil para servicios de stream o videojuegos en tiempo real
+
+- Load Balancers
+  - Sistemas que permiten distribuir tráfico de redes a diferentes servidores
+  - Existen LB para distintas capas
+    - Capa 4, balanceo basado en puertos y direcciones IP
+      - No procesa la información, sólo distribuye los tráficos que llegan de acuerdo al protocolo establecido
+      - Existen balanceadores de carga basados en tcp/udp, ssl proxys (cifrados y mediante https), tcp proxys (no cifrados y solo de capa 4)
+    - Capa 7, basado en URL (por ejemplo)
+      - Redirige tráfico basado en un endpoint por ejemplo, dado que el LB en esta capa se basa en los headers, cookies o url
+
+- Proxy
+  - Intermediario entre un usuario final y un servidor
+  - Actúa como receptor de las solicitudes del cliente y las distribuye al backend (servidor)
+  - Un proxy puede procesar los datos de varias maneras, cacher información, distribuir carga, etc
+
+Google utiliza el modelo OSI para definir sus capas de redes
+
+##### Balanceadores de carga basados en las capas 4 y 7 del modelo OSI
+Capa 4, Firewalls, ports, ips, etc
+Capa 7 HTTP(S), SMTP, DHCP (principalmente), también tiene un firewall de capa 7
+
+#### Tipos de balanceadores de carga
+  - External HTTP(S) / Internal HTTP(S)
+    - Tipo de trafico http o https
+    - Global, IPv4, IPv6 / Regional, IPv4
+    - http utiliza los puertos 80 o 8080, y https el 443
+    - La única diferencia es si soporta conectividad SSL
+      > [!NOTE] SSL es un protocolo de seguridad que cifra los datos
+  - SSL Proxy / TCP Proxy
+    - Puede utilizar cualquier puerto
+    - -Pueden 'correr' en cualquier puerto-
+        > -No sé si correr en un puerto es el concepto correcto, investigar cómo funciona-
+      > El concepto correcto es que detecta y envía tráfico desde cualquier puerto
+  - Network TCP/UDP
+    - TCP/UDP sin SSL
+    - Regional, IPv4
+  - Internal TCP/UDP
+    - Regional, IPv4
+    - El único interno junto a Internal HTTP(S)
+
+> [!IMPORTANT]
+> Importante saber: Global vs Regional y Cuáles son de capa 4 (TCP/UDP, SSL Proxy) y cuáles de capa 7 (HTTP(S))
+
+## Productos
+
+- Spanner: es una base de datos relacional que utiliza redes globales, es la más básica base de datos
+- Cloud SQL: base de datos en la nube para mySQL, PostgreSQL y SQL Server
+- Bigtable: ofrece bases de datos de baja latencia y en gran escala, además de plataforma de análisis de datos, útil para soluciones que requieren de mucho flujo y disponibilidad de datos
+- Cloud Storage: servicio de almacenamiento de objetos
+
+- BigQuery: permite guardar data en un sistema relacional de warehouse (almacén de datos) especializado en el análisis de datos y estadísticas
+- Dataflow: servicio de datos en tiempo real para analizar datos con ayuda de ai
+- Pub/Sub: es un servicio de mensajería para transferencia y entrega de eventos
+- App Engine: Servicio Serverless basado en el código
+
+- Compute Engine: Máquinas virtuales en la nube
+- Cloud Run: permite ejecutar apps en contenedores de manera más simple y en entorno serverless y ofrece administración parcial, útil para casos de usos más sencillos
+- GKE: permite ejecutar aplicaciones en contenedores, ofrece administración total, útil para casos de usos con arquitecturas complejas
+- Cloud Run Functions (o Cloud Functions): procesamiento controlado por eventos para servicios o apps en la nube, por ejemplo interceptar con apis y generar procesos en entornos serverless
+
+
+
+
+
+
+
+
