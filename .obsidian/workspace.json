@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/20241209.md",
+                "file": "daily/20241211.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "20241209"
+              "title": "20241211"
             }
           }
         ]
@@ -164,9 +164,10 @@
   },
   "active": "fc7ade72d35c7414",
   "lastOpenFiles": [
-    "daily/20241209.md~",
+    "daily/20241211.md~",
     "daily/4913",
     "daily/20241209.md",
+    "daily/20241209.md~",
     "templates/daily.md~",
     "templates/4913",
     "daily/2024-12-09.md~",
@@ -182,7 +183,6 @@
     "void/1727975536-week-2.md~",
     "void/1729180741-cloud-storage.md~",
     "void/1729180741-cloud-storage.md",
-    "void/1729179755-google-cloud-console.md~",
     "void/1729180020-iam.md",
     "void/1729179907-cli.md",
     "void/1729179788-bucket.md",
